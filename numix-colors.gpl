@@ -1,0 +1,18 @@
+GIMP Palette
+Name: Numix Colors
+Columns: 3
+
+#Background Color 
+ 45  45  45  #2D2D2D
+#Light Background Color
+173 169 168  #ADA9A8
+#Button Color
+ 20  20  20  #141414
+#Focus Color
+214  73  55  #D64937
+#Text Color
+220 220 220  #DCDCDC
+#Text Color Light
+249 249 249  #F9F9F9
+#Dark Text Color
+ 45  45  45  #2D2D2D
