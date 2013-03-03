@@ -1,0 +1,43 @@
+#!/bin/bash
+install_path=$HOME"/.icons/numix/tmp/"
+source_dir=$HOME"/.icons/numix/actions/"
+
+
+ocolor=$1
+ncolor=$2
+
+#we cannot overwrite the old files it seems cause it will break the svgs?
+#lets try it with a tmp folder
+
+recurse() {
+ cd $source_dir$1;
+ for i in *;do
+    #if [ -d "$i" ];then
+    #    echo "dir: $i"
+       # recurse "$i"
+	#el
+	
+	if [ -f "$i" ]; then
+		if [ "$1" != "scalable" ]; then
+		
+			if [ ! -d "$install_path$1" ]; then
+				mkdir $install_path$1
+			fi
+			
+			if [ ! -L "$i" ]; then
+				
+			cat $i | sed -e 's/fill:'$2'/fill:'$3'/' | sed -e 's/opacity:0.8/opacity:1.0/' > $install_path$1"/"$i
+			echo "file: $install_path$1/$i"
+			
+			fi
+		
+		fi
+	fi
+done
+ 
+}
+
+cd $source_dir;
+for i in *;do
+recurse $i $1 $2
+done
