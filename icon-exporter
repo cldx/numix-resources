@@ -21,11 +21,11 @@ recurse() {
 		if [ "$1" != "scalable" ]; then
 		
 			if [ ! -d "$install_path$1" ]; then
-				mkdir $install_path$1
+				mkdir -p $install_path$1
 			fi
 			
 			if [ ! -L "$i" ]; then
-				
+				#we need to move system files too?
 			cat $i | sed -e 's/fill:'$2'/fill:'$3'/' | sed -e 's/opacity:0.8/opacity:1.0/' > $install_path$1"/"$i
 			echo "file: $install_path$1/$i"
 			
