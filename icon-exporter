@@ -29,6 +29,8 @@ recurse() {
 			cat $i | sed -e 's/fill:'$2'/fill:'$3'/' | sed -e 's/opacity:0.8/opacity:1.0/' > $install_path$1"/"$i
 			echo "file: $install_path$1/$i"
 			
+			#else
+			#move cp $i $install_path$1"/"$i
 			fi
 		
 		fi
